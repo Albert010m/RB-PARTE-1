@@ -10,30 +10,55 @@
     <header class="header">
         <nav class="header_menu">
             <a class="header_menu_link" href="index.html">Inicio</a>
-            <a class="header_menu_link" href="about.html">Nuestra Historia</a>
+            <a class="header_menu_link" href="about.html">Conocenos</a>
             <a class="header_menu_link" href="cotizacion.html">Cotiza Ahora</a>
         </nav>
     </header>
 
-    <main class="presentacion"> 
-        <section class="presentacion_contenido">
-            <h1 class="presentacion_contenido_titulo">¿Cuáles son tus medidas?</h1> 
-            <p class="presentacion_contenido_texto">
-                A continuación te mostraremos cómo tomar las medidas correctamente para tus cortinas. Sigue los pasos para asegurar que todo quede perfecto.
-                </p>
+    <main class="cotizador_principal">
+        <div class="cotizador_container">
+            <h1 class="presentacion_contenido_titulo">Calcula tus cortinas al instante</h1> 
+            
+            <form id="cotizador-form" class="cotizador_form">
+                <div class="form_grupo">
+                    <label for="ancho" class="form_label">Ancho solicitado (metros):</label>
+                    <input type="number" id="ancho" class="form_input" placeholder="Ej: 3.50" step="0.01" required>
+                </div>
 
-            <div class="presentacion_enlaces">
-                <h2 class="presentacion_enlaces_subtitulo">¿Listo para cotizar?</h2>
-                <a class="presentacion_enlaces_link" href="TU_ENLACE_DE_WHATSAPP_AQUI">
-                    Cotiza por WhatsApp
-                </a>
-            </div>
-        </section>
-        
-        </main>
+                <div class="form_grupo">
+                    <label for="alto" class="form_label">Alto o largo (metros):</label>
+                    <input type="number" id="alto" class="form_input" placeholder="Ej: 2.20" step="0.01" required>
+                </div>
+
+                <div class="form_grupo">
+                    <label for="modelo" class="form_label">Elige tu modelo:</label>
+                    <select id="modelo" class="form_select" required>
+                        <option value="" disabled selected>-- Selecciona una opción --</option>
+                        <optgroup label="📦 Paquetes (Cortinero Doble)">
+                            <option value="paquete_blackout">Blackout DELUX + Traslúcida</option>
+                            <option value="paquete_austria">Austria Classic + Traslúcida</option>
+                        </optgroup>
+                        <optgroup label="🔸 Modelos Individuales (Cortinero Sencillo)">
+                            <option value="blackout">Blackout DELUX</option>
+                            <option value="austria">Austria Classic</option>
+                            <option value="traslucida">Traslúcida Premium</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <button type="submit" class="presentacion_enlaces_link">Calcular Cotización</button>
+            </form>
+
+            <div id="resultado-cotizacion" class="resultado_cotizacion" style="display: none;">
+                </div>
+        </div>
+    </main>
 
     <footer class="footer">
         <p>Resendiz Basics®</p>
     </footer>
+
+    <script src="cotizacion.js"></script>
 </body>
 </html>
+
